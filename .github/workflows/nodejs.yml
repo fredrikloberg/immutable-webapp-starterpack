@@ -42,4 +42,4 @@ jobs:
       - name: Upload assets to assets-bucket using the AWS cli
         run: >-
           echo "Continue from here with the AWS-cli (aws s3) to upload assets to bucket"
-          aws s3 cp build/main.js s3://min-immutable-webapp-bucket/assets/${{github.sha}}/main.js --cache-control public,max-age=31536000,immutable --acl public-read
+          aws s3 cp build-${{github.sha}}/main.js s3://min-immutable-webapp-bucket/assets/${{github.sha}}/main.js --cache-control public,max-age=31536000,immutable --acl public-read
